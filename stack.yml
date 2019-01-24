@@ -1,0 +1,8 @@
+provider:
+  name: faas
+  gateway: http://srv.locational.io:8080
+functions:
+  faas-template-r-fn:
+    lang: dockerfile
+    handler: ./fn-dbscan-clusterer
+    image: locational/faas-template-r-fn:latest

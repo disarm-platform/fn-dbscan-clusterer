@@ -1,0 +1,33 @@
+{
+"max_num": 500,
+"max_dist_m": 500,
+"subject":{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.1315943,
+          -25.95192257
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.93929985,
+          -26.79235138
+        ]
+      }
+    }
+  ]
+}
+}
