@@ -5,4 +5,4 @@ functions:
   faas-template-r-fn:
     lang: dockerfile
     handler: ./fn-dbscan-clusterer
-    image: locational/faas-template-r-fn:latest
+    image: locational/fn-dbscan-clusterer:latest
