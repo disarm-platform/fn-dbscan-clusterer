@@ -7,8 +7,8 @@ split_clusters = dget('function/dbscan_cluster_splitting.R')
 get_cluster_chulls = dget('function/get_cluster_chulls.R')
 
 function(params){
-    
-  subject <- st_read(as.json(params[['subject']]))
+
+  subject <- st_read(as.json(params[['subject']]), quiet = T) # Always with the :QUIET:
 
   max_dist_m = params[['max_dist_m']]
   max_num = params[['max_num']]
