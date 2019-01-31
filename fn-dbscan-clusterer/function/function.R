@@ -1,4 +1,4 @@
-dbscan_function = dget('function/dbscan.R')
+dbscan_function = dget('function/dbscan_clusterer.R')
 
 
 function(params) {
