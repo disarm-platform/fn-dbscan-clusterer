@@ -7,13 +7,9 @@ split_clusters = dget('function/dbscan_cluster_splitting.R')
 get_cluster_chulls = dget('function/get_cluster_chulls.R')
 
 function(params){
-  
-  # subject = st_read(params[['subject']]) # wont work
-  #test_points <- readRDS("/Users/hughsturrock/Documents/Work/MEI/DiSARM/GitRepos/targeting-shiny/data/StructurePoints_SWZ.rds")
-  #subject <- st_as_sf(test_points)
-  #print("got points")
-  #subject <- st_read("/Users/hughsturrock/Downloads/test_coords_swazi.geojson")
-  subject <- st_read(as.json(params[['subject']]))
+
+  subject <- st_read(as.json(params[['subject']]), quiet = T) # Always with the :QUIET:
+
   max_dist_m = params[['max_dist_m']]
   max_num = params[['max_num']]
   return_type = ifelse(is.null(params[['return_type']]), "both",
