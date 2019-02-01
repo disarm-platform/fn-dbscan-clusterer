@@ -24,6 +24,9 @@ function(params){
                                eps = (max_dist / 2), # over 2 as radius not diameter
                                minPts = 1) 
       
+      # Split clusters by roads/rivers/other
+      
+      
       # IDentify which clusters have more than
       # max_num and split
 

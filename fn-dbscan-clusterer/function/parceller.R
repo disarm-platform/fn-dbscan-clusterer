@@ -11,7 +11,7 @@ structure_points <- SpatialPointsDataFrame(SpatialPoints(buildings[,1:2]),
 
 
 # Get chulls
-get_chulls <- function(points_with_cluster_id){
+get_chulls_for_parceller <- function(points_with_cluster_id){
   
       # Get CHULL for each cluster of points
       get_chull_poly <- function(points_to_chull){
@@ -50,7 +50,7 @@ parcel_structures <- function(points_with_cluster_id, roads){
   }
   
   # Create buffers around structures
-  structure_buffers <- get_chulls(points_with_cluster_id)
+  structure_buffers <- get_chulls_for_parceller(points_with_cluster_id)
   
   # If it intersects, split
   lpi <- gIntersection(structure_buffers, roads_crop)  # intersect your line with the polygon
@@ -71,6 +71,22 @@ parcel_structures <- function(points_with_cluster_id, roads){
   
   # return
   return(structure_points)
+}
+
+
+# Combine geojsons to form a single SpatialLines object
+lines <- st_read("/Users/hughsturrock/Downloads/lines.geojson")
+poly <- st_read("/Users/hughsturrock/Downloads/poly.geojson")
+
+list_of_geojson <- list(lines, poly)
+
+combine_geojson_for_parcels <- function(list_of_geojson){
+  
+  n_layers <- length(list_of_geojson)
+  
+  lines_list <- lapply(list_of_geojson, function(x){st_cast(x, "LINESTRING")})
+  lines_merged <- do.call(rbind, lines_list)
+  as(lines_merged, "Spatial")
 }
 
 # Test
