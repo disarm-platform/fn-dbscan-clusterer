@@ -14,6 +14,7 @@ JSON object containing:
 ## Constraints
 
 - maximum size of `subject` is ~XX MB or contains maximum of ~XX features
+- timeout of XX seconds
 
 ## Response
 
