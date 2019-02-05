@@ -18,7 +18,7 @@ function(params){
   max_num = params[['max_num']]
   return_type = ifelse(is.null(params[['return_type']]), "both",
                        params[['return_type']])
-  parcel_lines_list <- params[['parcel_features']]
+  parcel_lines_list <- params[['parcel_by']]
 
       # Convert m to decimal degrees (approx)
       max_dist <- max_dist_m / 111 / 1000
