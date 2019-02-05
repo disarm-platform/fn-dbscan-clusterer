@@ -20,7 +20,7 @@ function(structure_points, parcel_lines){
     #structure_points$parcel <- paste0("top_cluster", structure_points$cluster_id)
     return(structure_points)
   }
-  
+
   # Create buffers around structures
   structure_buffers <- get_chulls_for_parceller(structure_points)
   

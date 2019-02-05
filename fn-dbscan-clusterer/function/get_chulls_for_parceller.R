@@ -10,7 +10,7 @@ function(points_with_cluster_id){
   }
   
   chull_polys <- by(points_with_cluster_id@coords,
-                    points_with_cluster_id$cluster_id, get_chull_poly)
+                    points_with_cluster_id$cluster, get_chull_poly)
   
   # Force chull_polys to be a list class not by class
   class(chull_polys) <- "list"
