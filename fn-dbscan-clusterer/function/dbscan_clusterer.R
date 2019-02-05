@@ -19,6 +19,11 @@ function(params){
   return_type = ifelse(is.null(params[['return_type']]), "both",
                        params[['return_type']])
   parcel_lines_list <- params[['parcel_by']]
+  
+      # If 'subject' is polygons, calc centroid for clustering
+      if(st_geometry_type(subject)[1] == "POLYGON"){
+        subject <- st_centroid(subject)
+      }
 
       # Convert m to decimal degrees (approx)
       max_dist <- max_dist_m / 111 / 1000
