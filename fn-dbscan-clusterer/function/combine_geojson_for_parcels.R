@@ -7,7 +7,12 @@ function(list_of_geojson) {
   
   lines_list <-
     lapply(list_of_geojson, function(x) {
-      x_sf <- st_read(x, quiet=TRUE)
+      tryCatch({
+        x_sf <- st_read(x, quiet=TRUE)
+      }, error = function(e) {
+        return(handle_error(e))
+      })
+      
       x_sf <- x_sf[,-c(2:ncol(x_sf))] 
       names(x_sf)[1] <- "COL1"
       st_cast(x_sf, "LINESTRING")
