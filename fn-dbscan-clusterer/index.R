@@ -24,14 +24,16 @@ main = function () {
 }
 
 handle_error = function(error) {
-  type = 'error'
-  function_response = as.json(list(type = unbox(type), content = unbox(as.character(error))))
+  function_response = as.json(list(
+    function_status = unbox('error'), 
+    content = unbox(as.character(error))))
   return(write(function_response, stdout()))
 }
 
 handle_success = function(content) {
-  type = 'success'
-  function_response = as.json(list(type = unbox(type), content = content))
+  function_response = as.json(list(
+    function_status = unbox('success'), 
+    content = content))
   return(write(function_response, stdout()))
 }
 
