@@ -1,6 +1,6 @@
 provider:
   name: faas
-  gateway: http://faas.srv.disarm.io
+  gateway: https://faas.srv.disarm.io
 functions:
   fn-dbscan-clusterer:
     lang: dockerfile
