@@ -2,7 +2,7 @@ function(params) {
   # Individual check for each parameter
 
   # Handle `subject`
-  retrieve_and_replace_for('subject', params)
+  download('subject', params)
   
   if (is.null(params[['subject']])) {
     stop('Missing `subject` parameter')
@@ -49,7 +49,9 @@ function(params) {
 # This does not check anything to do with the content of the 
 # received file: so two different URLs to the same file would 
 # be downloaded twice
-retrieve_and_replace_for = function(param_name, params) {
+
+# TODO: Only cache into a temporary file, to avoid maxing out storage
+download = function(param_name, params) {
   # Extract the value from params
   param_value = params[[param_name]]
   
