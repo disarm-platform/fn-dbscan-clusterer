@@ -26,14 +26,16 @@ main = function () {
 handle_error = function(error) {
   function_response = as.json(list(
     function_status = unbox('error'), 
-    content = unbox(as.character(error))))
+    result = unbox(as.character(error)))
+  )
   return(write(function_response, stdout()))
 }
 
-handle_success = function(content) {
+handle_success = function(result) {
   function_response = as.json(list(
     function_status = unbox('success'), 
-    content = content))
+    result = result)
+  )
   return(write(function_response, stdout()))
 }
 
