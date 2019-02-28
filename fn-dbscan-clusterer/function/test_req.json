@@ -9513,8 +9513,8 @@
     ]
   },
   "parcel_by": [ 
-"https://www.dropbox.com/s/dshv5wmqqrfiphx/roads_swz.geojson?dl=1",
-"https://www.dropbox.com/s/w1g7iez5lqr3fch/adm2_swz.geojson?dl=1",
-"https://www.dropbox.com/s/2e1p5yuqej4mq9t/swz_rivers.geojson?dl=1"
-]
+    "https://www.dropbox.com/s/dshv5wmqqrfiphx/roads_swz.geojson?dl=1",
+    "https://www.dropbox.com/s/w1g7iez5lqr3fch/adm2_swz.geojson?dl=1",
+    "https://www.dropbox.com/s/2e1p5yuqej4mq9t/swz_rivers.geojson?dl=1"
+  ]
 }
