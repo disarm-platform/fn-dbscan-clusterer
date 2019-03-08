@@ -33,16 +33,21 @@ function(params){
       # # Run dbscan to find neighbourhoods
       point_coords <- st_coordinates(subject)
       dbscan_cluster <- dbscan(point_coords,
-                               eps = (max_dist / 2), # over 2 as radius not diameter
+                               eps = max_dist, # over 2 as radius not diameter
                                minPts = 1)
-      # 
+      
+
       # Split clusters by roads/rivers/other
       point_coords_sp <- SpatialPointsDataFrame(SpatialPoints(point_coords),
                                                                        data.frame(cluster=dbscan_cluster$cluster))
       
       # First merge parcel lines if necessary
+      if(!is.null(parcel_lines_list)){
       parcel_lines <- combine_geojson_for_parcels(parcel_lines_list)
       point_coords_sp <- get_parcels(point_coords_sp, parcel_lines)
+      }else{
+        point_coords_sp$cluster <- 1
+      }
       
       # split groups that are too large
       # # First ID which clusters are too big
