@@ -1,6 +1,6 @@
 {
-  "max_num": 500,
-  "max_dist_m": 500,
+  "max_num": 50,
+  "max_dist_m": 250,
   "subject": {
     "type": "FeatureCollection",
     "crs": {

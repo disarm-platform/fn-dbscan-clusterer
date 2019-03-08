@@ -1,11 +1,12 @@
 # Takes XX
 # Returns YY
 function(cluster_points, max_num) {
+
   max_num_per_cluster <- max_num + 1
   diff <- max_num_per_cluster - max_num
   target_num_clusters <- ceiling(nrow(cluster_points) / max_num)
-  target_num_clusters <-
-    target_num_clusters + ceiling((diff - 10) / 10) # This might be too aggresive but speeds things up
+  #target_num_clusters <-
+  #  target_num_clusters + ceiling((diff - 10) / 10) # This might be too aggresive but speeds things up
   
   # While there are too many points per cluster,
   # keep adding a new cluster
@@ -29,9 +30,9 @@ function(cluster_points, max_num) {
       cluster_points[-which(sub_clusters$cluster %in% complete), ]
     diff <- max_num_per_cluster - max_num
     target_num_clusters <- ceiling(nrow(cluster_points) / max_num)
-    target_num_clusters <- target_num_clusters + ceiling(diff / 10)
+    #target_num_clusters <- target_num_clusters + ceiling(diff / 10)
     
-    # Make sure you're not asking
+    # Make sure you're not asking for same number of clusters as there are points
     if (target_num_clusters == nrow(cluster_points)) {
       target_num_clusters <- target_num_clusters - 1
     }
