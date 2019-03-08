@@ -1,2 +1,3 @@
 install.packages(c('dbscan',
-                   'geojsonio'))
+                   'geojsonio',
+                   'RANN'))
