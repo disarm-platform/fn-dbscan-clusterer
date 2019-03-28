@@ -18,4 +18,4 @@ JSON object containing:
 
 ## Response
 
-Depends on `return_type`. GeoJSON FeatureCollection.
+Depends on `return_type`. JSON object of GeoJSON FeatureCollection(s).
