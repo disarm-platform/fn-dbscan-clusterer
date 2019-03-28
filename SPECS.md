@@ -1,4 +1,4 @@
-# fn-nearest-neighbour-clusterer
+# fn-dbscan-clusterer
 Give us a bunch of GeoJSON polygons or points with some params, and we'll give you back clusters of them.
 
 ## Parameters
