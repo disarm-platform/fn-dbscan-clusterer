@@ -83,7 +83,7 @@ function(params){
           points_with_cluster_id$cluster_id
 
         if(return_type == "subject"){
-          return(list(thing = geojson_list(subject)))
+          return(list(subject = geojson_list(subject)))
         }
 
         if(return_type == "chull"){
@@ -147,11 +147,16 @@ function(params){
 
         # Get CHULL for each cluster of points
         chull_polys <- get_cluster_chulls(points_with_cluster_id, subject)
-
+      }
+      
+      if(return_type == "hull"){
+        return(list(chull_polys = geojson_list(chull_polys)))
+      }
+      if(return_type == "both"){
         return(list(subject = geojson_list(subject),
                     chull_polys = geojson_list(chull_polys)))
       }else{
-      return(subject)
+      return(list(subject = geojson_list(subject)))
       }
     }
 }
