@@ -13,7 +13,7 @@ main = function () {
     # checks types/structure of all parameters, return error if any problems
     # as required, replace any external URLs with data
     preprocess_params(params)
-    
+
     # run the function with parameters, 
     # return error if any problems, return success if succeeds      
     function_response = run_function(params)

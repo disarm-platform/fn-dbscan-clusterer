@@ -1,7 +1,7 @@
 function(params) {
   # HELPERS
   # At the top, so they're not exported into index.R
-  
+
   retrieve_and_replace_for = function(param) {
     if (!is.character(param) || !startsWith(prefix = "http", param)) {
       stop(paste("Not a URL. Trying to retrieve remote file for", param))

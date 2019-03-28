@@ -12,7 +12,11 @@ get_cluster_chulls = dget("function/get_cluster_chulls.R")
 
 function(params){
 
+  if(substr(params[['subject']], 1, 4) == "http"){
+    subject <- st_read(params[['subject']], quiet = T) # Always with the :QUIET:
+  }else{
   subject <- st_read(as.json(params[['subject']]), quiet = T) # Always with the :QUIET:
+  }
 
   max_dist_m = params[['max_dist_m']]
   max_num = params[['max_num']]
