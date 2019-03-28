@@ -90,7 +90,7 @@ function(params){
 
           # Generate chulls
           chull_polys <- get_cluster_chulls(points_with_cluster_id)
-          return(list(chull_polys = geojson_list(chull_polys)))
+          return(list(hull = geojson_list(chull_polys)))
 
         }else{
 
@@ -103,7 +103,7 @@ function(params){
                                                         function(x) {x$id<-NULL; return(x)})
 
             return(list(subject = geojson_list(subject),
-                        chull_polys = chull_polys_geojson_list))
+                        hull = chull_polys_geojson_list))
           }
         }else{
 
@@ -150,11 +150,11 @@ function(params){
       }
       
       if(return_type == "hull"){
-        return(list(chull_polys = geojson_list(chull_polys)))
+        return(list(hull = geojson_list(chull_polys)))
       }
       if(return_type == "both"){
         return(list(subject = geojson_list(subject),
-                    chull_polys = geojson_list(chull_polys)))
+                    hull = geojson_list(chull_polys)))
       }else{
       return(list(subject = geojson_list(subject)))
       }
