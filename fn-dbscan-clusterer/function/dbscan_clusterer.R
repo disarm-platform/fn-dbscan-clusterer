@@ -36,6 +36,7 @@ function(params){
       
       # # Run dbscan to find neighbourhoods
       point_coords <- st_coordinates(subject)
+      set.seed(1981)
       dbscan_cluster <- dbscan(point_coords,
                                eps = max_dist, # over 2 as radius not diameter
                                minPts = 1)
@@ -52,7 +53,7 @@ function(params){
       }else{
         point_coords_sp$cluster <- 1
       }
-      
+
       # split groups that are too large
       # # First ID which clusters are too big
       which_too_big <- which(table(point_coords_sp$cluster)>max_num)

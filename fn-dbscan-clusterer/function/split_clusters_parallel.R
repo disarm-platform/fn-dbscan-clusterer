@@ -13,6 +13,7 @@ function(cluster_points, max_num) {
   complete_sub_clusters <- list()
   
   while (max_num_per_cluster > max_num) {
+    set.seed(1981)
     sub_clusters <-
       kmeans(cluster_points[, c("X", "Y")], target_num_clusters)
     max_num_per_cluster <- max(table(sub_clusters$cluster))
