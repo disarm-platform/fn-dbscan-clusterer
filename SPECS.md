@@ -19,3 +19,6 @@ JSON object containing:
 ## Response
 
 Depends on `return_type`. JSON object of GeoJSON FeatureCollection(s).
+
+## Example input
+An example JSON input can be found [here](https://raw.githubusercontent.com/disarm-platform/fn-dbscan-clusterer/master/fn-dbscan-clusterer/function/test_req.json)
