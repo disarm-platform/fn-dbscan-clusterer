@@ -5,7 +5,7 @@ functions:
   fn-dbscan-clusterer:
     lang: dockerfile
     handler: ./fn-dbscan-clusterer
-    image: disarm/fn-dbscan-clusterer:0.0.14
+    image: disarm/fn-dbscan-clusterer:0.0.15
     environment:
       exec_timeout: 60
       write_timeout: 70
