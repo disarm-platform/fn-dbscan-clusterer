@@ -17,14 +17,13 @@ COPY function function
 # Populate example here - i.e. "cat", "sha512sum" or "node index.js"
 ENV fprocess="Rscript index.R"
 # Set to true to see request in function logs
-ENV write_debug="false"
 ENV combine_output="false"
+ENV write_timeout=500
+ENV read_timeout=500
+ENV exec_timeout=500
 
 EXPOSE 8080
 
 HEALTHCHECK --interval=3s CMD [ -e /tmp/.lock ] || exit 1
 CMD [ "fwatchdog" ]
 
-ENV write_timeout=500
-ENV read_timeout=500
-ENV exec_timeout=500
