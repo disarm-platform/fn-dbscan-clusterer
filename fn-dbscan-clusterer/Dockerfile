@@ -18,9 +18,9 @@ COPY function function
 ENV fprocess="Rscript index.R"
 # Set to true to see request in function logs
 ENV combine_output="false"
-ENV write_timeout=500
-ENV read_timeout=500
-ENV exec_timeout=500
+ENV write_timeout=900
+ENV read_timeout=900
+ENV exec_timeout=900
 
 EXPOSE 8080
 
