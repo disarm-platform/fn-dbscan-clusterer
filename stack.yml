@@ -5,10 +5,12 @@ functions:
   fn-dbscan-clusterer:
     lang: dockerfile
     handler: ./fn-dbscan-clusterer
-    image: disarm/fn-dbscan-clusterer:0.0.16
+    image: disarm/fn-dbscan-clusterer:0.1.0
     environment:
       exec_timeout: 900
       write_timeout: 900
       read_timeout: 900
       combine_output: false
       # write_debug: true
+    labels:
+      com.openfaas.scale.zero: true
