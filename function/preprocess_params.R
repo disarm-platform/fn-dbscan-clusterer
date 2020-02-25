@@ -88,6 +88,6 @@ function(params) {
     stop("'max_dist_m' should single parameter")
   }
   
-  
+  return(params)
 
 }
